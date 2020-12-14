@@ -696,7 +696,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1493942643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6493076955165284913, guid: a92684507bed15344b7a6c14f9a2eb84,
+          type: 3}
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1493942643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,7 +827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005271645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6493076955165284913, guid: a92684507bed15344b7a6c14f9a2eb84,
+          type: 3}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2005271645
 MonoBehaviour:
   m_ObjectHideFlags: 0
