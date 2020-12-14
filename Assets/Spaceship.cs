@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Spaceship : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class Spaceship : MonoBehaviour
     float nextFire = 0.0f;
     int health = 3;
     AudioSource audioSource;
+    public bool playerAlive = true;
 
     void Awake()
     {
@@ -49,6 +49,7 @@ public class Spaceship : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathFX, this.gameObject.transform.position);
             Instantiate(explosion, transform.position, Quaternion.identity);
+            playerAlive = false;
             Destroy(gameObject);
 
         }

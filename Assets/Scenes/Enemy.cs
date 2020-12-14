@@ -32,13 +32,14 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        
-        if (!canShoot||!oscillates) return;
 
+        if (!canShoot) return;
         fireRate = fireRate + (Random.Range(fireRate / -2, fireRate / 2));
         InvokeRepeating("Shoot", fireRate,fireRate);
-        movementVector = movementVector + (Random.Range(movementVector / -2, movementVector / 2));
+        
 
+        if (!oscillates) return;
+        movementVector = movementVector + (Random.Range(movementVector / -2, movementVector / 2));
     }
     // Update is called once per frame
     void Update()
