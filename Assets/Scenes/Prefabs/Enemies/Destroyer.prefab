@@ -404,6 +404,16 @@ PrefabInstance:
       propertyPath: score
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 8317514515741260112, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
+        type: 3}
+      propertyPath: shootFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ca9bd3bf4fcf282448179fe8c7bcf170, type: 3}
+    - target: {fileID: 8317514515741260112, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
+        type: 3}
+      propertyPath: oscillates
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8514853413128329895, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
         type: 3}
       propertyPath: m_LocalScale.y

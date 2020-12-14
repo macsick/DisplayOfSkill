@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 214997618902262221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 6950790730292978877}
   - {fileID: 199002813335243484}
@@ -53,7 +53,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3a138495238121840932fa7157c5c3b7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 917f7c2b713deae4abf10bc8669ce4b0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.127
   m_Pitch: 1
@@ -209,7 +209,10 @@ MonoBehaviour:
   explosion: {fileID: 4080040518237481745, guid: d964117974b3d454284b0ca0f65b6e1a,
     type: 3}
   ding: {fileID: 4080040518237481745, guid: ae4262e1be0224e449d88a2495e9a23b, type: 3}
+  shootFX: {fileID: 8300000, guid: 6c0bf74dd28b84c478372a8b9c6d7dae, type: 3}
+  deathFX: {fileID: 8300000, guid: 917f7c2b713deae4abf10bc8669ce4b0, type: 3}
   speed: 5
+  fireRate: 0.2
 --- !u!1 &2129753948520467099
 GameObject:
   m_ObjectHideFlags: 0

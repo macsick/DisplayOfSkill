@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1527601962647974842}
   - component: {fileID: 6238650230591299450}
   - component: {fileID: 3782378918222515968}
+  - component: {fileID: 3987900579244873358}
+  - component: {fileID: 4845052617023497618}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2736160694657907181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -159.10733, y: 218.86934, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -108,3 +110,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42451376, y: 0.5347849}
   m_EdgeRadius: 0
+--- !u!114 &3987900579244873358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736160694657907181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c77dfaa6b2c94547aa68b344cff8151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &4845052617023497618
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736160694657907181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

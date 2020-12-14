@@ -8,10 +8,12 @@ public class Spaceship : MonoBehaviour
     GameObject Barrel;
     Rigidbody2D rb;
     public GameObject bullet,explosion,ding;
-
+    public AudioClip shootFX,deathFX;
     public float speed;
+    public float fireRate = 0.5F;
+    float nextFire = 0.0f;
     int health = 3;
-    int delay = 0;
+    AudioSource audioSource;
 
     void Awake()
     {
@@ -23,6 +25,8 @@ public class Spaceship : MonoBehaviour
     {
         health++;
         PlayerPrefs.SetInt("HP", health);
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -31,30 +35,29 @@ public class Spaceship : MonoBehaviour
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical") * speed));
 
-        if (Input.GetKey(KeyCode.Space)&&delay>50)
+        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
+            
             Shoot();
-        delay++;
+           
     }
     public void Damage()
     {
         health-= 1;
+        PlayerPrefs.SetInt("HP", health);
         Instantiate(ding, transform.position, Quaternion.identity);
         if (health == 0f)
         {
+            AudioSource.PlayClipAtPoint(deathFX, this.gameObject.transform.position);
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            Invoke(nameof(LoadTitleScreen), 2);
-            
+
         }
     }
     void Shoot()
     {
-        delay = 0;
+        nextFire = Time.time + fireRate;
         Instantiate(bullet, Barrel.transform.position, Quaternion.identity);
-    }
-    void LoadTitleScreen()
-    {
-        SceneManager.LoadScene(0);
+        audioSource.PlayOneShot(shootFX);
     }
     public void AddHP()
     {

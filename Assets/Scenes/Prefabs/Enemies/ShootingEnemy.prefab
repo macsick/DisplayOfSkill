@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.592
       objectReference: {fileID: 0}
+    - target: {fileID: 5325482671481468097, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7185754942840970506, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -231,6 +236,11 @@ PrefabInstance:
       propertyPath: score
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 8317514515741260112, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
+        type: 3}
+      propertyPath: shootFX
+      value: 
+      objectReference: {fileID: 8300000, guid: af89681f934390a40b16685056b40982, type: 3}
     - target: {fileID: 8514853413128329895, guid: 4c31ae56dc1bd3e49b572141d1b15c84,
         type: 3}
       propertyPath: m_LocalScale.y

@@ -13,6 +13,6 @@ public class PlayerPrefText : MonoBehaviour
     }
     void Update()
     {
-        GetComponent<Text>().text = PlayerPrefs.GetInt("Score") + "";
+        GetComponent<Text>().text = PlayerPrefs.GetInt(name) + "";
     }
 }

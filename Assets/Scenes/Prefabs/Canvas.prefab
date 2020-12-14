@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -826.7, y: -323}
-  m_SizeDelta: {x: 81.97266, y: 30}
+  m_AnchoredPosition: {x: -859, y: -324}
+  m_SizeDelta: {x: 47.62799, y: 30.479477}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &322861964492869683
 CanvasRenderer:
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9963c253eac3a754b96d1d7dededf9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Score
 --- !u!1 &8444088754839388133
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -614, y: -323}
-  m_SizeDelta: {x: 81.97266, y: 30}
+  m_AnchoredPosition: {x: -647, y: -323}
+  m_SizeDelta: {x: 115.11923, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1024202800429795441
 CanvasRenderer:
@@ -441,4 +441,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9963c253eac3a754b96d1d7dededf9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: HP
