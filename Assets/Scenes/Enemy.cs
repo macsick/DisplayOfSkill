@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
         if (!oscillates) return;
         movementVector = movementVector + (Random.Range(movementVector / -2, movementVector / 2));
+        period = period + (Random.Range(period / -2, period / 2));
     }
     // Update is called once per frame
     void Update()

@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a3094df454d8c48b9457442ec249ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bS: {fileID: 0}
 --- !u!4 &486871874
 Transform:
   m_ObjectHideFlags: 0
@@ -469,15 +468,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 873000506, guid: 50e835d56add2954584bb51638c6e2ac, type: 3}
-      propertyPath: enemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 873000506, guid: 50e835d56add2954584bb51638c6e2ac, type: 3}
-      propertyPath: enemies.Array.data[2]
-      value: 
-      objectReference: {fileID: 8428713060463539324, guid: 7d9f7c013e49cde469bd248ab3b810c7,
-        type: 3}
     - target: {fileID: 2938849660949533798, guid: 50e835d56add2954584bb51638c6e2ac,
         type: 3}
       propertyPath: m_Name

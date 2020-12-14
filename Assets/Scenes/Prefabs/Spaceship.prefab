@@ -213,6 +213,7 @@ MonoBehaviour:
   deathFX: {fileID: 8300000, guid: 917f7c2b713deae4abf10bc8669ce4b0, type: 3}
   speed: 5
   fireRate: 0.2
+  playerAlive: 1
 --- !u!1 &2129753948520467099
 GameObject:
   m_ObjectHideFlags: 0

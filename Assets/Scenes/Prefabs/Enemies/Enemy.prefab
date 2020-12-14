@@ -177,8 +177,8 @@ MonoBehaviour:
   oscillates: 1
   fireRate: 0
   health: 1
-  movementVector: {x: 10, y: 10}
-  period: 2
+  movementVector: 8
+  period: 3
   movementFactor: 0.26
 --- !u!50 &1218668728
 Rigidbody2D:
