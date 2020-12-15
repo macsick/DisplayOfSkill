@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spaceship : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Spaceship : MonoBehaviour
     float nextFire = 0.0f;
     int health = 3;
     AudioSource audioSource;
-    public bool playerAlive = true;
 
     void Awake()
     {
@@ -49,8 +49,10 @@ public class Spaceship : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathFX, this.gameObject.transform.position);
             Instantiate(explosion, transform.position, Quaternion.identity);
-            playerAlive = false;
-            Destroy(gameObject);
+            PlayerDied();
+            transform.position = transform.position +new Vector3 (100f, 100f,0);
+            
+            
 
         }
     }
@@ -64,5 +66,14 @@ public class Spaceship : MonoBehaviour
     {
         health++;
         PlayerPrefs.SetInt("HP",health);
+    }
+    private void PlayerDied()
+    {
+        Invoke("LoadFirstScene", 1);
+    }
+
+    private void LoadFirstScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
