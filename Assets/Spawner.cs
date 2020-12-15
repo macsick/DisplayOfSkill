@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
     public float rate;
     int waves;
     public GameObject[] enemies;
+    public string bossspawn = "n";
+    public Transform Santa;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,14 @@ public class Spawner : MonoBehaviour
         if (waves != 0)
             PlayerPrefs.SetInt("Wave", waves);
         else
+        {
             PlayerPrefs.SetInt("Wave", 8055);
+            if (bossspawn == "n")
+            {
+                bossspawn = "y";
+                Instantiate(Santa, new Vector3(0, 8, 0), Santa.rotation);
+            }
+        }
     }
 
     private void WaveCalculation()

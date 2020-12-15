@@ -44,6 +44,7 @@ public class bullet : MonoBehaviour
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<Enemy>().Damage();
             }
+
         }
         else
         {
