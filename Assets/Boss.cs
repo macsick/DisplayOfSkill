@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    GameObject FastGunA, FastGunB, BigGunB, BigGunA;
+
     public GameObject bullet, explosion;
     public Color bulletColor;
     public AudioClip shootFX;
@@ -14,9 +15,7 @@ public class Boss : MonoBehaviour
     public int score;
     public float xSpeed;
     public float ySpeed;
-    float cooldown;
-    float cooldownSeconds = 0.5f;
-    float nextFire;
+
 
     public float fireRate;
     public float health;
@@ -30,8 +29,6 @@ public class Boss : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        FastGunA = transform.Find("FastGunA").gameObject;
-        FastGunB = transform.Find("FastGunB").gameObject;
 
 
     }
@@ -45,7 +42,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 3f)
+        if (transform.position.y < 4f)
         {
             ySpeed = 0f;
         }
@@ -73,7 +70,17 @@ public class Boss : MonoBehaviour
         AudioSource.PlayClipAtPoint(deathFX, this.gameObject.transform.position);
         Instantiate(explosion, transform.position, Quaternion.identity);
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
-        Destroy(gameObject);
+        BossDead();
+        transform.position = transform.position + new Vector3(100f, 100f, 0);
+    }
+    private void BossDead()
+    {
+        Invoke("LoadFirstScene", 1);
+    }
+
+    private void LoadFirstScene()
+    {
+        SceneManager.LoadScene(2);
     }
 
 }

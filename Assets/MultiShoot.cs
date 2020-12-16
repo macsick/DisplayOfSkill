@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MultiShoot : MonoBehaviour
 {
-
+    public float totaltime = 0;
     public GameObject bullet;
     public float startHeight= 4f;
     public float shotDelay = 1f;
@@ -26,8 +26,8 @@ public class MultiShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Recharged() && (transform.position.y < startHeight))
+        totaltime += Time.deltaTime;
+        if (Recharged() && (transform.position.y < startHeight) && totaltime<10 )
         {
             audioSource.PlayOneShot(shootFX);
             ShootMissle();

@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public int score;
     public float xSpeed;
     public float ySpeed;
-    public bool canShoot, oscillates;
+    public bool canShoot, oscillates, rotates, bouncy;
     
     public float fireRate;
     public float health;
@@ -41,6 +41,8 @@ public class Enemy : MonoBehaviour
         if (!oscillates) return;
         movementVector = movementVector + (Random.Range(movementVector / -2, movementVector / 2));
         period = period + (Random.Range(period / -2, period / 2));
+
+        if (!rotates) return;
     }
     // Update is called once per frame
     void Update()

@@ -22,6 +22,10 @@ public class BBullet : MonoBehaviour
             Destroy(gameObject);
         if (transform.position.y > 10f)
             Destroy(gameObject);
+        if (transform.position.x > 10f)
+            Destroy(gameObject);
+        if (transform.position.x < -10f)
+            Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

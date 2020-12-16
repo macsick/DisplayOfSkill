@@ -10,10 +10,13 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemies;
     public string bossspawn = "n";
     public Transform Santa;
+    public AudioClip Christmas;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnEnemy", rate, rate);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,7 +31,8 @@ public class Spawner : MonoBehaviour
             if (bossspawn == "n")
             {
                 bossspawn = "y";
-                Instantiate(Santa, new Vector3(0, 8, 0), Santa.rotation);
+                audioSource.PlayOneShot(Christmas);
+                Instantiate(Santa, new Vector3(-1, 10, 0), Santa.rotation);
             }
         }
     }

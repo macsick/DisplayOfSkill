@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2070472866738903795}
-  m_Layer: 0
+  - component: {fileID: 1502153642}
+  - component: {fileID: 385067894661844202}
+  m_Layer: 9
   m_Name: BigGunB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +32,121 @@ Transform:
   m_Father: {fileID: 7888671437287331148}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1502153642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205340164172170232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b5a3dbe26685b428fc06e9cee5ddff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  totaltime: 0
+  angle: 340
+  bullet: {fileID: 1385486683765809594, guid: 487068b16d1a38c45a56fe1d26610948, type: 3}
+  startTime: 10.2
+  shotDelay: 0.4
+  shootFX: {fileID: 8300000, guid: 672df462e4350684fb3ed4ecdfd31c4f, type: 3}
+--- !u!82 &385067894661844202
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205340164172170232}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1854027422448882048
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +158,7 @@ GameObject:
   - component: {fileID: 7609253586948526009}
   - component: {fileID: 1465009845}
   - component: {fileID: 1733785834161970304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FastGunB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,8 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fe15af80b475b41a01b2f36ed8991a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totaltime: 0
   bullet: {fileID: 1385486683765809594, guid: 487068b16d1a38c45a56fe1d26610948, type: 3}
-  startHeight: 4.5
+  startHeight: 5
   shotDelay: 1
   shootFX: {fileID: 8300000, guid: 672df462e4350684fb3ed4ecdfd31c4f, type: 3}
 --- !u!82 &1733785834161970304
@@ -189,9 +307,9 @@ GameObject:
   - component: {fileID: -2923038664794757346}
   - component: {fileID: 991065492656759963}
   - component: {fileID: 2666300869459303912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MechaSanta_0
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,17 +577,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1385486683765809594, guid: 487068b16d1a38c45a56fe1d26610948, type: 3}
-  explosion: {fileID: 0}
+  explosion: {fileID: 4080040518237481745, guid: 1cb00004a8d136e40959ec1a732f8ec7,
+    type: 3}
   bulletColor: {r: 0.9245283, g: 0.19624424, b: 0.19624424, a: 1}
   shootFX: {fileID: 8300000, guid: 917f7c2b713deae4abf10bc8669ce4b0, type: 3}
-  deathFX: {fileID: 0}
-  score: 0
+  deathFX: {fileID: 8300000, guid: 917f7c2b713deae4abf10bc8669ce4b0, type: 3}
+  score: 1000
   xSpeed: 0
   ySpeed: 0
   fireRate: 1
-  health: 0
+  health: 45
   movementVector: 5
-  period: 5
+  period: 8
   movementFactor: 0
 --- !u!82 &2666300869459303912
 AudioSource:
@@ -576,7 +695,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8399920148131366845}
-  m_Layer: 0
+  - component: {fileID: 1557439581}
+  - component: {fileID: 1557439582}
+  m_Layer: 9
   m_Name: BigGunA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,6 +718,121 @@ Transform:
   m_Father: {fileID: 7888671437287331148}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557439581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837819652605952777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b5a3dbe26685b428fc06e9cee5ddff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  totaltime: 0
+  angle: 160
+  bullet: {fileID: 1385486683765809594, guid: 487068b16d1a38c45a56fe1d26610948, type: 3}
+  startTime: 10
+  shotDelay: 0.4
+  shootFX: {fileID: 8300000, guid: 672df462e4350684fb3ed4ecdfd31c4f, type: 3}
+--- !u!82 &1557439582
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837819652605952777}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.35
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9103229484537359780
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +844,7 @@ GameObject:
   - component: {fileID: 7666179261445637621}
   - component: {fileID: 745953738}
   - component: {fileID: 8392993246688802272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FastGunA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,8 +877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fe15af80b475b41a01b2f36ed8991a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totaltime: 0
   bullet: {fileID: 1385486683765809594, guid: 487068b16d1a38c45a56fe1d26610948, type: 3}
-  startHeight: 4
+  startHeight: 4.5
   shotDelay: 1
   shootFX: {fileID: 8300000, guid: 672df462e4350684fb3ed4ecdfd31c4f, type: 3}
 --- !u!82 &8392993246688802272
