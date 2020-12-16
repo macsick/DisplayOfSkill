@@ -46,6 +46,7 @@ public class Boss : MonoBehaviour
         if (transform.position.y < 4f)
         {
             ySpeed = 0f;
+
         }
 
         if (period <= Mathf.Epsilon) { return; }

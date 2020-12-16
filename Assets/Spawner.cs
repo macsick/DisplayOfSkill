@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
             {
                 bossspawn = "y";
                 audioSource.PlayOneShot(Christmas);
-                Instantiate(Santa, new Vector3(0, 10, 0), Santa.rotation);
+                Instantiate(Santa, new Vector3(-2, 12, 0), Santa.rotation);
             }
         }
     }
@@ -53,6 +53,6 @@ public class Spawner : MonoBehaviour
 
     void SpawnEnemy()
     {   for (int i = 0; i < waves; i++)
-            Instantiate(enemies[Random.Range(0,enemies.Length)],new Vector3(Random.Range(-8f,8f),7,0),Quaternion.identity);
+            Instantiate(enemies[Random.Range(0,enemies.Length)],new Vector3(Random.Range(-7f,7f),7,0),Quaternion.identity);
     }
 }

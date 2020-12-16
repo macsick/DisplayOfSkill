@@ -12,10 +12,11 @@ public class Enemy : MonoBehaviour
     public int score;
     public float xSpeed;
     public float ySpeed;
-    public bool canShoot, oscillates, rotates, bouncy;
-    
+    public bool canShoot, oscillates, rotates, bouncy, Rrotates;
+    private float timeCounter;
     public float fireRate;
     public float health;
+    public float radius;
     AudioSource audioSource;
     [SerializeField] float movementVector = 5f;
     [SerializeField] float period = 2f;
@@ -34,21 +35,48 @@ public class Enemy : MonoBehaviour
     {
 
         if (!canShoot) return;
-        fireRate += (Random.Range(fireRate / -2, fireRate / 2));
-        InvokeRepeating("Shoot", fireRate,fireRate);
-        
+        {
+            fireRate += (Random.Range(fireRate / -2, fireRate / 2));
+            InvokeRepeating("Shoot", fireRate, fireRate); 
+        }
+
 
         if (!oscillates) return;
-        movementVector += movementVector (Random.Range(movementVector / -2, movementVector / 2));
-        period += (Random.Range(period / -2, period / 2));
+        { 
+        movementVector += (Random.Range(movementVector / -2, movementVector / 2));
+        period += (Random.Range(period / -2, period / 2)); }
 
         if (!rotates) return;
-
-        if (!bouncy) return;
+        {
+            ySpeed += (Random.Range(ySpeed / -2, ySpeed / 2));
+        }
     }
     // Update is called once per frame
     void Update()
-    { 
+    {
+        timeCounter += Time.deltaTime;
+        oscillation();
+        if (rotates)
+        {
+            timeCounter += Time.deltaTime;
+            float x = Mathf.Cos(timeCounter) * radius;
+            float y = Mathf.Sin(timeCounter) * radius;
+            transform.position += new Vector3(x/50, y/50*ySpeed);
+            if (transform.position.y < -5f)
+                Destroy(gameObject);
+        }
+        if (Rrotates)
+        {
+            timeCounter += Time.deltaTime;
+            float x = Mathf.Cos(timeCounter) * radius;
+            float y = Mathf.Sin(timeCounter) * radius;
+            transform.position += new Vector3(x / 50*-1, y / 50 * ySpeed);
+            if (transform.position.y < -5f)
+                Destroy(gameObject);
+        }
+    }
+    private void oscillation()
+    {
         if (oscillates == true)
         {
             if (period <= Mathf.Epsilon) { return; }
@@ -57,21 +85,15 @@ public class Enemy : MonoBehaviour
             const float tau = Mathf.PI * 2;
             float rawSinWave = Mathf.Sin(cycles * tau);
 
-            movementFactor = movementVector*rawSinWave - 0.5f*rawSinWave*movementVector;
+            movementFactor = movementVector * rawSinWave - 0.5f * rawSinWave * movementVector;
             rb.velocity = new Vector2(movementFactor, ySpeed * -1);
             if (transform.position.y < -10f)
                 Destroy(gameObject);
         }
 
-        if (rotates == true)
-        {
 
-        }
 
-        if (bouncy)
-        {
 
-        }
         else
         {
             rb.velocity = new Vector2(xSpeed, ySpeed * -1);
@@ -80,9 +102,6 @@ public class Enemy : MonoBehaviour
             if (transform.position.y < -10f)
                 Destroy(gameObject);
         }
-            
-        
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
