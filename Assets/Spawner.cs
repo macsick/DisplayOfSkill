@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
             {
                 bossspawn = "y";
                 audioSource.PlayOneShot(Christmas);
-                Instantiate(Santa, new Vector3(-1, 10, 0), Santa.rotation);
+                Instantiate(Santa, new Vector3(0, 10, 0), Santa.rotation);
             }
         }
     }

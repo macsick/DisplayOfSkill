@@ -18,9 +18,9 @@ public class BBullet : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.up * speed;
-        if (transform.position.y < -10f)
+        if (transform.position.y < -5f)
             Destroy(gameObject);
-        if (transform.position.y > 10f)
+        if (transform.position.y > 5f)
             Destroy(gameObject);
         if (transform.position.x > 10f)
             Destroy(gameObject);

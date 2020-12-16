@@ -585,11 +585,12 @@ MonoBehaviour:
   score: 1000
   xSpeed: 0
   ySpeed: 0
+  youWin: {fileID: 0}
   fireRate: 1
   health: 45
   movementVector: 5
   period: 8
-  movementFactor: 0
+  movementFactor: 0.45
 --- !u!82 &2666300869459303912
 AudioSource:
   m_ObjectHideFlags: 0

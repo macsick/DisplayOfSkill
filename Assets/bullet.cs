@@ -30,9 +30,9 @@ public class bullet : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector2(0,10 * dir);
-        if (transform.position.y < -10f)
+        if (transform.position.y < -5f)
             Destroy(gameObject);
-        if (transform.position.y > 10f)
+        if (transform.position.y > 5f)
             Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

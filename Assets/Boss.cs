@@ -16,6 +16,7 @@ public class Boss : MonoBehaviour
     public float xSpeed;
     public float ySpeed;
 
+    public GameObject youWin;
 
     public float fireRate;
     public float health;
@@ -72,10 +73,11 @@ public class Boss : MonoBehaviour
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         BossDead();
         transform.position = transform.position + new Vector3(100f, 100f, 0);
+        youWin.SetActive(true);
     }
     private void BossDead()
     {
-        Invoke("LoadFirstScene", 1);
+        Invoke("LoadFirstScene", 3);
     }
 
     private void LoadFirstScene()

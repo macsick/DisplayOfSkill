@@ -34,15 +34,17 @@ public class Enemy : MonoBehaviour
     {
 
         if (!canShoot) return;
-        fireRate = fireRate + (Random.Range(fireRate / -2, fireRate / 2));
+        fireRate += (Random.Range(fireRate / -2, fireRate / 2));
         InvokeRepeating("Shoot", fireRate,fireRate);
         
 
         if (!oscillates) return;
-        movementVector = movementVector + (Random.Range(movementVector / -2, movementVector / 2));
-        period = period + (Random.Range(period / -2, period / 2));
+        movementVector += movementVector (Random.Range(movementVector / -2, movementVector / 2));
+        period += (Random.Range(period / -2, period / 2));
 
         if (!rotates) return;
+
+        if (!bouncy) return;
     }
     // Update is called once per frame
     void Update()
@@ -59,6 +61,16 @@ public class Enemy : MonoBehaviour
             rb.velocity = new Vector2(movementFactor, ySpeed * -1);
             if (transform.position.y < -10f)
                 Destroy(gameObject);
+        }
+
+        if (rotates == true)
+        {
+
+        }
+
+        if (bouncy)
+        {
+
         }
         else
         {
