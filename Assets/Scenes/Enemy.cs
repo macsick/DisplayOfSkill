@@ -61,6 +61,8 @@ public class Enemy : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(xSpeed, ySpeed * -1);
+            if (transform.position.y < -5f)
+                canShoot = false;
             if (transform.position.y < -10f)
                 Destroy(gameObject);
         }

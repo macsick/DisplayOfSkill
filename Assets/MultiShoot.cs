@@ -6,23 +6,39 @@ public class MultiShoot : MonoBehaviour
 {
 
     public GameObject bullet;
+    public float startHeight= 4f;
+    public float shotDelay = 1f;
+    private float endDelay = 0;
+    public AudioClip shootFX;
+    AudioSource audioSource;
 
-    public float startShotTime = 0.5f;
-    public float delayShotTime = 0.5f;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-        InvokeRepeating("ShootMissle", startShotTime, delayShotTime);
+        endDelay = Time.time;
+        audioSource = GetComponent<AudioSource>();
+    }
+    public bool Recharged()
+    {
+        return (Time.time > endDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (Recharged() && (transform.position.y < startHeight))
+        {
+            audioSource.PlayOneShot(shootFX);
+            ShootMissle();
+        }
+
     }
 
     void ShootMissle()
     {
-        Instantiate(bullet, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.80f), Quaternion.identity);
+        endDelay = Time.time + shotDelay;
+        Instantiate(bullet, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.80f), gameObject.transform.rotation);
+
     }
 }

@@ -58,43 +58,8 @@ public class Boss : MonoBehaviour
 
         movementFactor = movementVector * rawSinWave - 0.5f * rawSinWave * movementVector;
         rb.velocity = new Vector2(movementFactor, ySpeed);
-
-        initiateShoot();
-
     }
-    void Shoot()
-    {
 
-        Instantiate(bullet, FastGunA.transform.position, Quaternion.Euler(0,0,-5));
-        Instantiate(bullet, FastGunB.transform.position, Quaternion.AngleAxis(10, Vector3.forward));
-
-        audioSource.PlayOneShot(shootFX);
-
-    }
-    void initiateShoot()
-    {
-        if (fireRate == 0 )
-        {   //Reduced to a single if, cause It does exactly the same
-            //And in my Opinion, looks better. (You might want not to
-            //in case you have anything else here that do needs the if)
-            Shoot();
-        }
-        else
-        {
-            if (Time.time > nextFire && fireRate > 0)
-            {
-
-                nextFire = Time.time + fireRate;
-                Shoot();
-
-                if (cooldown > Time.time)
-
-                    cooldown = Time.time + cooldownSeconds;
-            }
-
-
-        }
-    }
     public void Damage()
     {
         health--;
